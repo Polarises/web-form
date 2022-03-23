@@ -112,7 +112,7 @@ export default class DataList extends Component {
     }
     doHandleMonth(month){
         var m = month;
-        if(month.toString().length == 1){
+        if(month.toString().length === 1){
             m = "0" + month;
         }
         return m;

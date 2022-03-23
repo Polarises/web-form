@@ -17,26 +17,6 @@ const defaultValue = {
       "placeholder": "请输入姓名",
       "type": "string",
       "props": {}
-    },
-    "input_Ls9zcZ": {
-      "title": "学号",
-      "type": "string",
-      "props": {}
-    },
-    "input_GCe5iT": {
-      "title": "班级",
-      "type": "string",
-      "props": {}
-    },
-    "input_epklle": {
-      "title": "专业",
-      "type": "string",
-      "props": {}
-    },
-    "input_crazVB": {
-      "title": "宿舍",
-      "type": "string",
-      "props": {}
     }
   },
   "labelWidth": 120,

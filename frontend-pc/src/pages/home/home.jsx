@@ -114,21 +114,6 @@ export default class home extends Component {
         </div>
 
         <div className="card-item">
-          <Card title="精彩即将呈现"
-                extra={
-                  <Button
-                      icon={<LineChartOutlined />}
-                      onClick={() => {
-                        this.props.history.push('/dashboard');
-                      }}
-                  />
-                }
-          >
-            <Coming
-                title="距离交还有"
-                value={Date.now() + 1000 * 60 * 60 * 24 * 2}
-            />
-          </Card>
         </div>
       </div>
     );
