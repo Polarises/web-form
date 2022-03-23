@@ -1,0 +1,52 @@
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    .header-userInfo{
+        display: flex;
+        height: 50%;
+        padding: 0 20px;
+        border-bottom:1px solid #00bfa5; 
+        font-size: 14px;    
+        align-items: center;
+        .header-userName{
+            margin-left: auto;
+            color: #9da5b4;
+        }
+        .header-logout-btn{
+            margin-left: 10px;
+            color: #00bfa5;
+            cursor: pointer;
+        }
+    }  
+    .header-title-area{
+        height: 50%;
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        
+        .header-title{
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 80px;
+            font-size: 16px;
+            color: #000;
+        }
+        .header-title::after{
+            content: '';
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-top: 20px solid #fff;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header-time-box{
+            margin-left: auto;
+            color: #9da5b4;
+        }
+    }
+}
