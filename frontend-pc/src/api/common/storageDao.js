@@ -1,7 +1,7 @@
 import utilHelper from "../utilsHelper";
 
 
-const storageName = utilHelper.scope.oem + 'CourseTeacher';
+const storageName = utilHelper.scope.username;
 let temp = localStorage.getItem(storageName);
 if (!temp) {
   localStorage.setItem(storageName, "{}");
@@ -30,7 +30,6 @@ const getItem = function (name) {
 }
 const delItem = function (name) {
   try {
-    console.log(111);
     let temp = JSON.parse(localStorage.getItem(storageName))
     delete temp[name];
     localStorage.setItem(storageName,JSON.stringify(temp))

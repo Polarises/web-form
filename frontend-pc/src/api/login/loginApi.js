@@ -14,6 +14,7 @@ const userLogin = function (username, password) {
             password
         }
     }).then(res => {
+        console.log(res)
         return res.data;
     });
 }
