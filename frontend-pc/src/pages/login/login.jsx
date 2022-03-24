@@ -112,10 +112,10 @@ export default class login extends Component {
         <section className="login-section">
           <div className="login-box">
             <div className="login-box-title">用户登录</div>
-            <NormalLoginForm goAdminPage={this.goAdminPage}></NormalLoginForm>
+            <NormalLoginForm goAdminPage={this.goAdminPage}/>
           </div>
         </section>
-        <footer className="login-footer"></footer>
+        <footer className="login-footer"/>
       </div>
     );
   }

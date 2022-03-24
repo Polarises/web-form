@@ -44,25 +44,9 @@ class formHome extends Component {
   }
 
   componentDidMount() {
-   /* const ele = document.getElementsByClassName('dnd-container')
-    // console.log('log eele::', ele[0].classList.remove('edit'))
-    // 最终预览
-    ele[0].classList.remove('edit')
-    ele[0].classList.add('preview')
-    ele[0].getElementsByTagName('div')[0].style.height = '33px'
-    const field = document.getElementsByClassName('field-wrapper')
-    console.log('log ele,', ele[0].getElementsByTagName('ul').style)
-    // console.log('log eele::', trAllDom)
-    const treeHei = 66;
-    let trAllDom = document.getElementsByClassName('field-wrapper');
-    var x = document.querySelectorAll("field-wrapper");
-    console.log('log eele::', trAllDom, trAllDom.length, x)
-    for(let i = 0; i < trAllDom.length; i++){
-      trAllDom[i].style.height = treeHei + "px";
-    }*/
     const ele = document.getElementsByClassName('dnd-container')
     // 获取文档中所有 class="example" 的 <p> 元素
-    var x = document.querySelectorAll("div.dnd-container");
+    let x = document.querySelectorAll("div.dnd-container");
     // ele[0].querySelectorAll("div")[0].parentNode.removeChild(ele[0].querySelectorAll("div")[0])
     console.log('log xxx::', x, ele[0].querySelectorAll("div"))
   }
@@ -88,7 +72,8 @@ class formHome extends Component {
         const res = await formApi.addForm(formData);
         if (res.status === 0) {
           this.onClose();
-          message.success('新增成功！！');
+          //  message.success()  给一个弹窗
+          message.success('新增成功！');
           Modal.confirm({
             title: '继续编辑?',
             content: '',
@@ -96,6 +81,7 @@ class formHome extends Component {
             okType: 'danger',
             cancelText: '继续编辑',
             onOk: () => {
+              //通过this.props.history.push传参
               this.props.history.push("/manage");
             },
             onCancel() {
@@ -119,6 +105,7 @@ class formHome extends Component {
             okType: 'danger',
             cancelText: '继续编辑',
             onOk: () => {
+              //通过路由传参的方式将保存的表格信息传递给/manage
               this.props.history.push("/manage");
             },
             onCancel() {
@@ -128,7 +115,7 @@ class formHome extends Component {
         }
       }
     } else {
-      message.error('请输入表单名称！！')
+      message.error('请输入表单名称！')
     }
   };
   onClose() {
@@ -151,7 +138,7 @@ class formHome extends Component {
                 // commonSettings={{}}
                 // globalSettings={{}}
                 // extraButtons={[{ text: '去playground验证', onClick: this.goToFrPlayground }]}
-                extraButtons={[true, true, true, false, { text: '保存表单', onClick: this.createSave }]}
+                extraButtons={[true, true, true, true, { text: '保存表单', onClick: this.createSave }]}
                 onChange={data => console.log('data:change', this.setState({dataItem: data}))}
                 onSchemaChange={schema => this.setSchema(schema)}
                 hideId={true}
@@ -162,23 +149,10 @@ class formHome extends Component {
             />
           </div>
           <div className="fr-generator-playground" style={{ height: '40vh' }}>
-            {/*<Provider
-                onChange={data => console.log('data:change', data)}
-                onSchemaChange={schema => console.log('schema:change', schema)}
-                defaultValue={defaultValue}
-                hideId={true}
-                // extraButtons={[ { text: '最终展示', onClick: val => this.goToFrPlayground(val) }, false, false, false, false]}
-                // extraButtons={[true, false, false, false, false]}
-            >
-              <div className="fr-generator-container">
-                <Sidebar fixedName />
-                <Canvas defaultValue={defaultValue} />
-                <Settings />
-              </div>
-            </Provider>*/}
 
-            {/*<Transform />*/}
 
+
+            {/*表单页面保存按钮*/}
             <Modal
                 visible={this.state.formModel.visible}
                 onCancel={() => this.onClose()}
@@ -188,6 +162,8 @@ class formHome extends Component {
                 width="40%"
                 bodyStyle={{ height: '25vh', padding: '40px' }}
             >
+
+              {/*保存表单页面*/}
               <div>
                 <Card title="表单名称">
                   <Form ref={this.formRef}>

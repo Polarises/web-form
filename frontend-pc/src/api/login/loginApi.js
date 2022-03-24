@@ -1,9 +1,9 @@
 import request from '../common/request';
 /**
- * 
- * @param {*} username:用户名 
+ *
+ * @param {*} username:用户名
  * @param {*} password:密码
- * @returns 
+ * @returns
  */
 const userLogin = function (username, password) {
     return request({
@@ -13,8 +13,8 @@ const userLogin = function (username, password) {
             username,
             password
         }
-    }).then(resp => {
-        return resp.data;
+    }).then(res => {
+        return res.data;
     });
 }
 const loginApi = {
